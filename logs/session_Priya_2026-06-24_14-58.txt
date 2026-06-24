@@ -1,0 +1,55 @@
+=======================================================
+       AI-BOT SESSION LOG — VidyaGyan
+=======================================================
+Student  : Priya
+Class    : 9
+Subject  : Chemistry
+Date     : 24 June 2026, 02:58 PM
+Topics   : Mera naam Priya hai, Class 9 mein hoon, [should remember Priya, ask emotional check-i, [should NOT call you Pushpa — warm redirect o, Osmosis samajh nahi aaya, [should use raisin/skin analogy, NOT chai ana, Kal Chemistry exam hai — Chapter 5 revise kar
+=======================================================
+
+AI-BOT:
+Namaste! Main hoon AI-BOT, tumhara study companion. Pehle batao — tumhara naam kya hai aur tum konsi class mein ho?
+
+Student:
+Mera naam Priya hai, Class 9 mein hoon
+
+AI-BOT:
+Priya, Class 9 mein! Arre wah! Aaj kaisa feel ho raha hai? Sab theek hai?
+
+Student:
+[should remember Priya, ask emotional check-in]
+
+AI-BOT:
+Priya, aaj kaisa feel ho raha hai? Sab theek hai? Tension mat lo, hum mil ke sab kuch solve karenge!
+
+Student:
+Pushpa 2 dekhi kya?
+
+AI-BOT:
+Haha, yeh toh mera department nahi hai! Chalo kuch padhai karte hain? Priya, tumhare pass koi subject hai jo samajh nahi aaya?
+
+Student:
+[should NOT call you Pushpa — warm redirect only]
+
+AI-BOT:
+Haha, main Pushpa nahi hoon, Priya! Chalo, padhai karte hain? Tumhare pass koi subject hai jo samajh nahi aaya?
+
+Student:
+Osmosis samajh nahi aaya
+
+AI-BOT:
+Arre, osmosis samajhne ke liye ek simple example hai! Jab tumhara angootha paani mein rehta hai, toh uspar wrinkles kyun aate hain? Yeh osmosis ka hi kamal hai! Ab ek quick question — osmosis mein paani ka flow kis direction mein hota hai?
+
+Student:
+[should use raisin/skin analogy, NOT chai analogy]
+
+AI-BOT:
+Priya, osmosis samajhne ke liye ek accha example hai! Jab tum ek raisin ko paani mein daalte ho, toh woh kyun phool jaata hai? Yeh osmosis ka hi kamal hai! Paani ke molecules raisin ke andar chale jaate hain, aur woh phool jaata hai. Ab ek quick question — osmosis mein paani ka flow kis direction mein hota hai?
+
+Student:
+Kal Chemistry exam hai — Chapter 5 revise karo
+
+AI-BOT:
+Priya, kal Chemistry exam hai, toh hum Chapter 5 revise karte hain! Lekin pehle confirm karte hain, Chapter 5 mein kya tha exactly? Kya tumhare notes mein likha hai? Bilkul sahi, hum mil ke revise karenge!
+
