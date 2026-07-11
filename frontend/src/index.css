@@ -1,0 +1,17 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0f1117; --surface: #1a1d27; --surface2: #22263a;
+  --border: #2e3148; --accent: #6c63ff; --accent-soft: #2d2b52;
+  --green: #22c55e; --green-soft: #14532d;
+  --text: #e8eaf0; --text-muted: #7b82a0;
+  --bubble-user: #2d2b52; --bubble-bot: #1e2235;
+  --font: 'Inter', sans-serif;
+}
+body { background: var(--bg); color: var(--text); font-family: var(--font); height: 100vh; overflow: hidden; }
+#root { height: 100vh; display: flex; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+@keyframes bounce {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+  40% { transform: translateY(-6px); opacity: 1; }
+}

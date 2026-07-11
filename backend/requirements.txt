@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+groq
+gtts
+python-dotenv
+pydub
