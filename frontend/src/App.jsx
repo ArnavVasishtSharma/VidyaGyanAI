@@ -166,6 +166,43 @@ function IconV({ size = 16 }) {
 
 const ICON_MAP = { book: IconBook, leaf: IconLeaf, clock: IconClock, zap: IconZap, user: IconUser }
 
+const TYPEWRITER_SENTENCES = ["VidhyaGyan AI", "How can I help you today ?"];
+
+function AnimatedHeading() {
+  const [index, setIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [phase, setPhase] = useState('typing'); 
+
+  useEffect(() => {
+    if (phase === 'typing') {
+      if (charIndex < TYPEWRITER_SENTENCES[index].length) {
+        const timeout = setTimeout(() => setCharIndex(c => c + 1), 60); 
+        return () => clearTimeout(timeout);
+      } else {
+        const timeout = setTimeout(() => setPhase('idle'), 500);
+        return () => clearTimeout(timeout);
+      }
+    } else if (phase === 'idle') {
+      const timeout = setTimeout(() => setPhase('fading'), 2500);
+      return () => clearTimeout(timeout);
+    } else if (phase === 'fading') {
+      const timeout = setTimeout(() => {
+        setIndex(i => (i + 1) % TYPEWRITER_SENTENCES.length);
+        setCharIndex(0);
+        setPhase('typing');
+      }, 500);
+      return () => clearTimeout(timeout);
+    }
+  }, [charIndex, phase, index]);
+
+  return (
+    <h1 className={`welcome-heading ${phase === 'fading' ? 'fade-out' : 'fade-in'}`}>
+      {TYPEWRITER_SENTENCES[index].substring(0, charIndex)}
+      <span className="tw-cursor"></span>
+    </h1>
+  );
+}
+
 /* ═══════════════════════════════════════════════════════════════════
    AUTO-RESIZE TEXTAREA HOOK
    ═══════════════════════════════════════════════════════════════════ */
@@ -418,7 +455,7 @@ export default function App() {
           {!hasMessages ? (
             /* ── Welcome state — centered like v0 ── */
             <div className="chat-welcome">
-              <h1 className="welcome-heading">VidhyaGyan AI</h1>
+              <AnimatedHeading />
               {renderInputBox()}
             </div>
           ) : (

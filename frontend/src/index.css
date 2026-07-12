@@ -15,8 +15,8 @@
   --text:          #fafafa;
   --text-muted:    #737373;
   --text-dim:      #525252;
-  --accent:        #8b5cf6;
-  --accent-soft:   rgba(139, 92, 246, 0.12);
+  --accent:        #1d4ed8;
+  --accent-soft:   rgba(29, 78, 216, 0.2);
   --green:         #22c55e;
   --green-soft:    rgba(34, 197, 94, 0.12);
   --font:          'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -77,12 +77,13 @@ html, body {
   width: 28px;
   height: 28px;
   border-radius: 8px;
-  background: linear-gradient(135deg, #d946ef, #8b5cf6);
+  background: #000000;
+  border: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 0 15px rgba(217, 70, 239, 0.4);
+  color: #ffffff;
 }
 
 .nav-title {
@@ -185,68 +186,73 @@ html, body {
   gap: 5px;
 }
 
-.class-btn {
-  padding: 5px 0;
-  border-radius: 7px;
-  border: 1px solid var(--border);
-  background: transparent;
-  color: var(--text-muted);
-  font-size: 11px;
-  font-weight: 500;
-  font-family: var(--font);
+.class-btn, .subject-btn {
+  appearance: none;
+  background-color: #000000;
+  border: 2px solid #1a1a1a;
+  border-radius: 12px;
+  box-sizing: border-box;
+  color: #ffffff;
   cursor: pointer;
-  transition: all 150ms var(--ease);
+  display: inline-block;
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 44px;
+  outline: none;
+  padding: 10px 14px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  will-change: transform;
 }
 
-.class-btn:hover {
-  border-color: var(--border-hover);
-  background: var(--surface-hover);
+.class-btn:disabled, .subject-btn:disabled {
+  pointer-events: none;
 }
 
-.class-btn.active {
+.class-btn:hover, .subject-btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.5) 0 8px 15px;
+  transform: translateY(-2px);
+  border-color: #333333;
+}
+
+.class-btn:active, .subject-btn:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.class-btn.active, .subject-btn.active {
+  background-color: var(--accent);
   border-color: var(--accent);
-  background: var(--accent-soft);
-  color: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 4px 15px var(--accent-soft);
 }
 
 .subject-list {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 8px; /* increased gap to accommodate new button style */
   overflow-y: auto;
   flex: 1;
 }
 
 .subject-btn {
-  padding: 7px 10px;
-  border-radius: 7px;
-  border: 1px solid transparent;
-  background: transparent;
-  color: var(--text-muted);
-  font-size: 12px;
-  font-weight: 500;
-  font-family: var(--font);
-  cursor: pointer;
   text-align: left;
-  transition: all 150ms var(--ease);
-}
-
-.subject-btn:hover {
-  background: var(--surface-hover);
-  color: var(--text);
-}
-
-.subject-btn.active {
-  border-color: var(--accent);
-  background: var(--accent-soft);
-  color: var(--accent);
+  min-height: 48px;
 }
 
 .session-info {
   padding: 10px 12px;
   border-radius: 8px;
   background: var(--accent-soft);
-  border: 1px solid rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(29, 78, 216, 0.3);
   font-size: 11px;
   color: var(--text-muted);
   line-height: 1.8;
@@ -289,6 +295,36 @@ html, body {
   text-align: center;
   letter-spacing: -0.03em;
   line-height: 1.1;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Typewriter Effect */
+.welcome-heading.fade-out {
+  opacity: 0;
+  transition: opacity 500ms var(--ease);
+}
+.welcome-heading.fade-in {
+  opacity: 1;
+  transition: opacity 500ms var(--ease);
+}
+
+.tw-cursor {
+  display: inline-block;
+  width: 4px;
+  height: 0.85em;
+  background-color: var(--accent);
+  margin-left: 6px;
+  vertical-align: middle;
+  border-radius: 2px;
+  animation: twBlink 1s step-end infinite;
+}
+
+@keyframes twBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 /* Conversation state — messages + bottom input */
@@ -339,7 +375,9 @@ html, body {
   width: 26px;
   height: 26px;
   border-radius: 7px;
-  background: linear-gradient(135deg, var(--accent), #6366f1);
+  background: #000000;
+  border: 1px solid var(--border);
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -365,7 +403,7 @@ html, body {
 
 .msg-bubble.user {
   background: var(--accent-soft);
-  border: 1px solid rgba(139, 92, 246, 0.2);
+  border: 1px solid rgba(29, 78, 216, 0.4);
   border-radius: 14px 14px 4px 14px;
 }
 
@@ -426,17 +464,17 @@ html, body {
   transition: border-color 150ms, box-shadow 150ms;
 }
 
-/* ── Smooth purple gradient animation behind input ── */
+/* ── Smooth dark blue gradient animation behind input ── */
 .input-box::before {
   content: "";
   position: absolute;
   inset: -1px;
   border-radius: calc(var(--radius) + 1px);
-  background: linear-gradient(90deg, #8b5cf6, #d946ef, #3b82f6, #8b5cf6);
+  background: linear-gradient(90deg, #1e3a8a, #2563eb, #172554, #1e3a8a);
   background-size: 300% 100%;
   z-index: -1;
   filter: blur(10px);
-  opacity: 0.4;
+  opacity: 0.3;
   animation: promptGlow 6s linear infinite;
   transition: opacity 250ms var(--ease), filter 250ms var(--ease);
 }
